@@ -34,53 +34,72 @@ class DetailPage extends StatelessWidget {
                     Icons.location_pin,
                     color: Colors.grey,
                   ),
-                  Text(
-                    '${context.watch<LocalProvider>().getLocation}',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.grey[600],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      '${context.watch<LocalProvider>().getLocation}',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey[600],
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
+            Divider(),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   Icon(
                     Icons.calendar_today,
                     color: Colors.grey,
                   ),
-                  Text(
-                    '${context.watch<LocalProvider>().getCheck ? "Currently in season" : "Not in season"}',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.grey[600],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      '${context.watch<LocalProvider>().getCheck ? "Currently in season" : "Not in season"}',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey[600],
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
+            Divider(),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   Icon(
                     Icons.line_style,
                     color: Colors.grey,
                   ),
-                  Text(
-                    '${context.watch<LocalProvider>().getNotes}',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.grey[600],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      '${context.watch<LocalProvider>().getNotes}',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey[600],
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.purple,
+        child: Icon(
+          Icons.edit,
+          color: Colors.white,
         ),
       ),
     );

@@ -29,6 +29,7 @@ class InputsPage extends StatelessWidget {
                         controller:
                             context.watch<LocalProvider>().nameController,
                         decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
                           label: Text(
                             "Name",
                           ),
@@ -44,6 +45,7 @@ class InputsPage extends StatelessWidget {
                         controller:
                             context.watch<LocalProvider>().locationController,
                         decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
                           label: Text(
                             "Location",
                           ),
@@ -70,6 +72,7 @@ class InputsPage extends StatelessWidget {
                         controller:
                             context.watch<LocalProvider>().noteController,
                         decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
                           label: Text(
                             "Notes",
                           ),

@@ -14,31 +14,36 @@ class HomePage extends StatelessWidget {
         title: Text('Forage'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: MaterialButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => DetailPage()),
-            );
-          },
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '${context.watch<LocalProvider>().getName}',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+        padding: EdgeInsets.all(10.0),
+        child: Container(
+          height: 80,
+          child: MaterialButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => DetailPage()),
+              );
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${context.watch<LocalProvider>().getName}',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              Text(
-                '${context.watch<LocalProvider>().getLocation}',
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.grey[600],
+                SizedBox(height: 10),
+                Text(
+                  '${context.watch<LocalProvider>().getLocation}',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.grey[600],
+                  ),
                 ),
-              ),
-            ],
+                if (context.read<LocalProvider>().getLocation != "") Divider(),
+              ],
+            ),
           ),
         ),
       ),
