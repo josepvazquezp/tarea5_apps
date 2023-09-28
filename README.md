@@ -1,16 +1,25 @@
 # tip_time
+- Ayuda a calcular la propina en base al total del servicio,
+- la calidad del servicio y si se desea redondear
 
-A new Flutter project.
+- Provider
+- Manejo de Widgets en general
+- Principalmente en el widget Switch
 
-## Getting Started
+## Lo que me costo mas trabajo
+Durante este trabajo me costo la organizacion de los widgets para la primera fila
+para colocar el icono y el campo de texto, pero se logro cuando se tuvo mas tiempo
+para la entrega.
+Tambien tarde un poco en entender el funcionamiento de Switch, ya que me dio varios
+problemas al momento de cambiar el valor que usaba.
 
-This project is a starting point for a Flutter application.
+## Lo que aprendi
+- Manejo del Widget de Switch
+- Mejore mi comprension de un provider para identificar cuando y como usarlo
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
+![alt text](assets/1.jpeg)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![alt text](assets/2.jpeg)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![alt text](assets/3.jpeg)
