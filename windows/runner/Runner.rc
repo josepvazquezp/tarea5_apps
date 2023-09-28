@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "forage" "\0"
+            VALUE "FileDescription", "tip_time" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "forage" "\0"
+            VALUE "InternalName", "tip_time" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "forage.exe" "\0"
-            VALUE "ProductName", "forage" "\0"
+            VALUE "OriginalFilename", "tip_time.exe" "\0"
+            VALUE "ProductName", "tip_time" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
