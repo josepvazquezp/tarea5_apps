@@ -13,39 +13,49 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Forage'),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: Container(
-          height: 80,
-          child: MaterialButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => DetailPage()),
-              );
-            },
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '${context.watch<LocalProvider>().getName}',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+      body: ListView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: context.watch<LocalProvider>().getList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: EdgeInsets.all(10.0),
+            child: MaterialButton(
+              onPressed: () {
+                context
+                    .read<LocalProvider>()
+                    .detailSave(context.read<LocalProvider>().getList[index]);
+
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => DetailPage()),
+                );
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '${context.watch<LocalProvider>().getList[index]["name"]}',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  '${context.watch<LocalProvider>().getLocation}',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.grey[600],
+                  SizedBox(height: 10),
+                  Text(
+                    '${context.watch<LocalProvider>().getList[index]["location"]}',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.grey[600],
+                    ),
                   ),
-                ),
-                if (context.read<LocalProvider>().getLocation != "") Divider(),
-              ],
+                  if (context.watch<LocalProvider>().getList[index]
+                          ["location"] !=
+                      "")
+                    Divider(),
+                ],
+              ),
             ),
-          ),
-        ),
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

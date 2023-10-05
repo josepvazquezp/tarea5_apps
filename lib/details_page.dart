@@ -19,7 +19,7 @@ class DetailPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                '${context.watch<LocalProvider>().getName}',
+                '${context.watch<LocalProvider>().getCurrentObject["name"]}',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -37,7 +37,7 @@ class DetailPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      '${context.watch<LocalProvider>().getLocation}',
+                      '${context.watch<LocalProvider>().getCurrentObject["location"]}',
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.grey[600],
@@ -59,7 +59,7 @@ class DetailPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      '${context.watch<LocalProvider>().getCheck ? "Currently in season" : "Not in season"}',
+                      '${context.watch<LocalProvider>().getCurrentObject["check"]}',
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.grey[600],
@@ -81,7 +81,7 @@ class DetailPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      '${context.watch<LocalProvider>().getNotes}',
+                      '${context.watch<LocalProvider>().getCurrentObject["notes"]}',
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.grey[600],

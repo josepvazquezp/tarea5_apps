@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
 class LocalProvider extends ChangeNotifier {
-  String _name = "";
-  String _location = "";
-  String _notes = "";
+  Map<String, String> _currentObject = {};
   bool _check = false;
+  List<Map<String, String>> _listElements = [];
   var nameController = TextEditingController();
   var locationController = TextEditingController();
   var noteController = TextEditingController();
 
-  String get getName => _name;
-  String get getLocation => _location;
-  String get getNotes => _notes;
+  Map<String, String> get getCurrentObject => _currentObject;
   bool get getCheck => _check;
+  List<Map<String, String>> get getList => _listElements;
 
   void setCheck() {
     _check = !_check;
@@ -20,9 +18,20 @@ class LocalProvider extends ChangeNotifier {
   }
 
   void save() {
-    _name = nameController.text;
-    _location = locationController.text;
-    _notes = noteController.text;
+    var object = {
+      "name": nameController.text,
+      "location": locationController.text,
+      "notes": noteController.text,
+      "check": _check ? "Currently in season" : "Not in season"
+    };
+
+    _listElements.add(object);
+
+    notifyListeners();
+  }
+
+  void detailSave(Map<String, String> object) {
+    _currentObject = object;
     notifyListeners();
   }
 
